@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aureo Bistro Demo</title>
+  <style>
+    body{margin:0;font-family:Georgia,serif;background:#13100f;color:#f6ead4}
+    header{padding:4rem 8%;background:linear-gradient(140deg,#2d1f17,#13100f)}
+    h1{font-size:clamp(2rem,6vw,4rem);margin:0}
+    .btn{display:inline-block;margin-top:1rem;padding:.8rem 1.1rem;border-radius:999px;background:#d9a95d;color:#21150a;text-decoration:none;font-weight:700}
+    .sec{padding:3rem 8%}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+    .card{padding:1rem;border:1px solid #4c3a2f;border-radius:12px;background:#1b1614}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem}
+    .gallery img{width:100%;border-radius:12px}
+    a.back{color:#d9a95d}
+  </style>
+</head>
+<body>
+  <header>
+    <p>Aureo Bistro · Demo</p>
+    <h1>Alta cocina en un ambiente íntimo y elegante</h1>
+    <a class="btn" href="https://wa.me/529832135455" target="_blank" rel="noopener">Reservar mesa</a>
+  </header>
+  <section class="sec">
+    <h2>Menú destacado</h2>
+    <div class="cards">
+      <div class="card">Ravioli trufado</div>
+      <div class="card">Salmón al horno de piedra</div>
+      <div class="card">Risotto de hongos silvestres</div>
+      <div class="card">Tarta de avellana y cacao</div>
+    </div>
+  </section>
+  <section class="sec">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="../assets/aureo-bistro.svg" alt="Interior del restaurante" />
+      <img src="../assets/luna-spa.svg" alt="Plato gourmet" />
+      <img src="../assets/norte-clinic.svg" alt="Mesa premium" />
+    </div>
+  </section>
+  <section class="sec">
+    <h2>¿Listo para una noche especial?</h2>
+    <a class="btn" href="https://wa.me/529832135455" target="_blank" rel="noopener">Reservar ahora</a>
+    <p><a class="back" href="../index.html">← Volver a Velox Web</a></p>
+  </section>
+</body>
+</html>
