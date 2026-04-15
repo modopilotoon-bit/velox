@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luna Spa Demo</title>
+  <style>
+    body{margin:0;font-family:Arial,sans-serif;background:#f2f8f7;color:#21353a}
+    header{padding:4rem 8%;background:linear-gradient(180deg,#d5ece8,#f2f8f7)}
+    h1{font-size:clamp(2rem,6vw,3.5rem);margin:0}
+    .btn{display:inline-block;margin-top:1rem;padding:.8rem 1.1rem;border-radius:999px;background:#4cb9a5;color:#fff;text-decoration:none;font-weight:700}
+    .sec{padding:2.8rem 8%}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .card{padding:1rem;background:#fff;border:1px solid #cfe5e0;border-radius:12px}
+    .hero-img{width:100%;max-width:780px;border-radius:16px;border:1px solid #cfe5e0}
+    a.back{color:#2a8a79}
+  </style>
+</head>
+<body>
+  <header>
+    <p>Luna Spa · Demo</p>
+    <h1>Bienestar profundo para cuerpo y mente</h1>
+    <a class="btn" href="https://wa.me/529832135455" target="_blank" rel="noopener">Agendar sesión</a>
+  </header>
+  <section class="sec">
+    <h2>Ambiente</h2>
+    <img class="hero-img" src="../assets/luna-spa.svg" alt="Ambiente relajante del spa" />
+  </section>
+  <section class="sec">
+    <h2>Servicios</h2>
+    <div class="cards">
+      <div class="card">Masaje relajante</div>
+      <div class="card">Facial hidratante premium</div>
+      <div class="card">Ritual de piedras calientes</div>
+      <div class="card">Programa antiestrés mensual</div>
+    </div>
+    <p><a class="back" href="../velox-web/index.html">← Volver a Velox Web</a></p>
+  </section>
+</body>
+</html>
