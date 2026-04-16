@@ -1,0 +1,11 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='850' viewBox='0 0 1200 850'>
+<defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0' stop-color='#152347'/><stop offset='1' stop-color='#1f4b77'/></linearGradient></defs>
+<rect width='1200' height='850' rx='32' fill='url(#g)'/>
+<rect x='70' y='85' width='1060' height='120' rx='18' fill='rgba(255,255,255,.1)'/>
+<rect x='70' y='245' width='510' height='520' rx='18' fill='rgba(255,255,255,.09)'/>
+<rect x='620' y='245' width='510' height='250' rx='18' fill='rgba(255,255,255,.12)'/>
+<rect x='620' y='515' width='510' height='250' rx='18' fill='rgba(50,245,189,.18)'/>
+<path d='M130 650 C260 520 360 560 500 430' stroke='#3dd8ff' stroke-width='14' fill='none'/>
+<circle cx='500' cy='430' r='20' fill='#3dd8ff'/>
+<text x='110' y='165' fill='#dff3ff' font-size='58' font-family='Arial'>Velox Web Analytics</text>
+</svg>

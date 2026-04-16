@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aureo Bistro | Demo Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#110d0b;--surface:#1b1512;--gold:#e1bc7c;--text:#f8ecd8;--muted:#c6b095;--border:#3d2f24}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .top{position:sticky;top:0;z-index:20;background:rgba(17,13,11,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .top .wrap{width:min(1120px,92%);margin:auto;min-height:64px;display:flex;align-items:center;justify-content:space-between}.top a{color:var(--gold);text-decoration:none;font-weight:700}
+    .container{width:min(1120px,92%);margin:auto}.sec{padding:5rem 0}.reveal{opacity:0;transform:translateY(24px);transition:.6s ease}.reveal.visible{opacity:1;transform:none}
+    .hero{min-height:86vh;display:grid;align-items:end;background:linear-gradient(0deg,rgba(17,13,11,.86),rgba(17,13,11,.45)),url('../assets/aureo-hero.svg') center/cover;padding:4rem 0}
+    h1,h2,h3{font-family:'Cormorant Garamond',serif;line-height:1.05}
+    h1{font-size:clamp(2.2rem,7vw,5rem);margin:.4rem 0}h2{font-size:clamp(2rem,4vw,3rem);margin:0 0 1rem}
+    .tag{letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-size:.8rem}.subtitle{max-width:60ch;color:var(--muted)}
+    .btn{display:inline-block;padding:.85rem 1.2rem;border-radius:999px;text-decoration:none;font-weight:700;transition:.2s ease}
+    .btn-primary{background:linear-gradient(120deg,#f1ce92,#d79f4d);color:#2c1b0f;box-shadow:0 12px 30px rgba(215,159,77,.35)}
+    .btn-primary:hover{transform:translateY(-2px)} .btn-ghost{border:1px solid var(--border);color:var(--text)}
+    .menu-grid,.exp-grid,.gallery,.perks{display:grid;gap:1rem}.menu-grid{grid-template-columns:repeat(3,1fr)}
+    .menu-card,.box{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.1rem;transition:.25s ease}
+    .menu-card:hover,.box:hover{transform:translateY(-4px);border-color:#6b5139}
+    .price{color:var(--gold);font-weight:700}
+    .exp-grid{grid-template-columns:1.2fr .8fr}.exp-grid img,.gallery img{width:100%;display:block;border-radius:14px;border:1px solid var(--border)}
+    .gallery{grid-template-columns:repeat(3,1fr)}.perks{grid-template-columns:repeat(3,1fr)}
+    .reserve{background:linear-gradient(140deg,rgba(225,188,124,.17),rgba(225,188,124,.05));border:1px solid #6a5338;border-radius:20px;padding:2rem;text-align:center}
+    .wa-float{position:fixed;right:1rem;bottom:1rem;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#042b17;text-decoration:none;font-weight:800}
+    @media(max-width:900px){.menu-grid,.exp-grid,.gallery,.perks{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="top"><div class="wrap"><a href="../index.html">← Volver a Velox Web</a><a target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">WhatsApp</a></div></div>
+  <header class="hero" id="inicio">
+    <div class="container reveal">
+      <p class="tag">Aureo Bistro · Demo Premium</p>
+      <h1>Gastronomía de autor en una atmósfera inolvidable</h1>
+      <p class="subtitle">Una experiencia de lujo donde cada detalle, plato y servicio está diseñado para sorprender.</p>
+      <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">Reservar mesa</a>
+    </div>
+  </header>
+
+  <section class="sec"><div class="container reveal"><h2>Menú destacado</h2><div class="menu-grid"><article class="menu-card"><h3>Entradas</h3><p>Tartar de atún, burrata trufada, croquetas ibéricas.</p><p class="price">Desde $14</p></article><article class="menu-card"><h3>Platos fuertes</h3><p>Filete prime, salmón miso, risotto de hongos silvestres.</p><p class="price">Desde $28</p></article><article class="menu-card"><h3>Bebidas</h3><p>Coctelería de autor, selección de vinos y mocktails.</p><p class="price">Desde $9</p></article></div></div></section>
+  <section class="sec"><div class="container exp-grid reveal"><div class="box"><h2>Experiencia Aureo</h2><p class="subtitle">Iluminación cálida, música curada y servicio impecable. Cada visita se convierte en una celebración elegante.</p><a class="btn btn-ghost" href="#galeria">Ver galería</a></div><img src="../assets/aureo-exp1.svg" alt="Ambiente elegante de Aureo Bistro" /></div></section>
+  <section class="sec" id="galeria"><div class="container reveal"><h2>Galería</h2><div class="gallery"><img src="../assets/aureo-exp1.svg" alt="Interior premium" /><img src="../assets/aureo-exp2.svg" alt="Plato gourmet" /><img src="../assets/aureo-exp3.svg" alt="Experiencia nocturna" /></div></div></section>
+  <section class="sec"><div class="container reveal"><h2>¿Por qué la gente vuelve?</h2><div class="perks"><article class="box">Servicio impecable</article><article class="box">Cocina de autor</article><article class="box">Ambiente exclusivo</article></div></div></section>
+  <section class="sec"><div class="container reserve reveal"><h2>Reserva tu noche especial</h2><p class="subtitle" style="margin:auto">Disponible para cenas privadas, aniversarios y experiencias gastronómicas premium.</p><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">Reservar por WhatsApp</a></div></section>
+
+  <a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">WA</a>
+  <script>const obs=new IntersectionObserver((e)=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+</body>
+</html>

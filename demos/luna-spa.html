@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luna Spa | Bienestar premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --bg-soft: #fdfbf8;
+      --text: #22332f;
+      --muted: #60756e;
+      --accent: #86ab98;
+      --accent-dark: #6f9783;
+      --border: #d9e2dc;
+      --card: #ffffff;
+      --shadow: 0 20px 40px rgba(36, 56, 50, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: linear-gradient(180deg, #f9f6f2 0%, #f3f6f2 100%);
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .container { width: min(1150px, 92%); margin: 0 auto; }
+    .section { padding: 6rem 0; }
+    h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.1; margin: 0; }
+    h1 { font-size: clamp(2.5rem, 7vw, 5rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.2rem); margin-bottom: 1rem; }
+    p { margin: 0; }
+
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      background: rgba(251, 248, 243, 0.85);
+      border-bottom: 1px solid transparent;
+      backdrop-filter: blur(10px);
+      transition: border-color .28s ease, box-shadow .28s ease;
+    }
+    .navbar.scrolled {
+      border-color: var(--border);
+      box-shadow: 0 10px 24px rgba(36,56,50,.08);
+    }
+    .nav-wrap {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .brand {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.6rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 700;
+    }
+    nav { display: flex; gap: 1rem; }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: .95rem;
+    }
+    nav a:hover { color: var(--text); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      padding: .85rem 1.3rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), #9ec2b0);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(134, 171, 152, .35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); }
+    .btn-soft {
+      background: #fff;
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      align-items: end;
+      padding: 9rem 0 5.5rem;
+      background:
+        linear-gradient(180deg, rgba(17,25,22,.42), rgba(17,25,22,.24)),
+        url('../assets/luna-hero.svg') center/cover;
+      color: #f7fbf8;
+    }
+    .hero .subtitle { color: #ecf3ee; max-width: 60ch; margin: 1.1rem 0 1.5rem; }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: .78rem;
+      font-weight: 700;
+      color: #d8e8df;
+    }
+
+    .services-grid,
+    .benefits-grid,
+    .packages,
+    .testimonials,
+    .gallery {
+      display: grid;
+      gap: 1rem;
+    }
+    .services-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .benefits-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .packages { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .testimonials { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 1.2rem;
+      box-shadow: var(--shadow);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #bdd1c6;
+      box-shadow: 0 24px 44px rgba(36, 56, 50, 0.12);
+    }
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      margin-bottom: .8rem;
+      background: #ecf3ee;
+      color: var(--accent-dark);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .card p { color: var(--muted); margin-top: .35rem; }
+
+    .experience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .experience img {
+      width: 100%;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height: 380px;
+      object-fit: cover;
+    }
+    .experience p { color: var(--muted); }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: #fff;
+      aspect-ratio: 1 / 1;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+
+    .package-card .time { color: var(--accent-dark); font-weight: 700; margin-bottom: .5rem; display: block; }
+    .package-card p { color: var(--muted); margin-bottom: 1rem; }
+
+    .testimonial p { color: var(--muted); font-style: italic; margin-bottom: .9rem; }
+    .testimonial strong { font-size: .95rem; }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(180deg, #eef4ef, #f9f6f2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta p { color: var(--muted); margin: .6rem 0 1.2rem; }
+
+    .wa-float {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      text-decoration: none;
+      background: #25D366;
+      color: #042b17;
+      font-weight: 800;
+      box-shadow: 0 14px 24px rgba(37, 211, 102, .35);
+      z-index: 60;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.show { opacity: 1; transform: none; }
+
+    @media (max-width: 1020px) {
+      nav { display: none; }
+      .services-grid, .benefits-grid, .packages, .testimonials, .gallery, .experience { grid-template-columns: 1fr; }
+      .section { padding: 4.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio">Luna Spa</a>
+      <nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#ambiente">Ambiente</a>
+        <a href="#paquetes">Paquetes</a>
+      </nav>
+      <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar cita</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container reveal">
+        <p class="eyebrow">Luna Spa · Bienestar premium</p>
+        <h1>Encuentra tu equilibrio</h1>
+        <p class="subtitle">Tratamientos diseñados para tu bienestar físico y mental</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar cita</a>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container reveal">
+        <h2>Servicios</h2>
+        <div class="services-grid">
+          <article class="card"><div class="icon">✦</div><h3>Masajes relajantes</h3><p>Sesiones profundas para liberar tensión y recuperar ligereza corporal.</p></article>
+          <article class="card"><div class="icon">✿</div><h3>Faciales premium</h3><p>Tratamientos con enfoque hidratante y rejuvenecedor para una piel luminosa.</p></article>
+          <article class="card"><div class="icon">❋</div><h3>Terapias corporales</h3><p>Rituales de exfoliación y nutrición para renovar tu energía de forma integral.</p></article>
+          <article class="card"><div class="icon">◌</div><h3>Aromaterapia</h3><p>Aceites esenciales seleccionados para equilibrar emociones y mente.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container experience reveal">
+        <div>
+          <h2>Experiencia Luna</h2>
+          <p>En Luna Spa creemos que el bienestar es esencial. Cada sesión está diseñada para desconectar, relajar y renovar.</p>
+          <p style="margin-top: .9rem; color: var(--muted);">Desde la música hasta la temperatura del ambiente, cada detalle está pensado para darte calma y claridad.</p>
+        </div>
+        <img src="../assets/luna-amb1.svg" alt="Experiencia premium en Luna Spa" />
+      </div>
+    </section>
+
+    <section class="section" id="ambiente">
+      <div class="container reveal">
+        <h2>Ambiente</h2>
+        <div class="gallery">
+          <figure class="gallery-item"><img src="../assets/luna-amb1.svg" alt="Interior relajante" /></figure>
+          <figure class="gallery-item"><img src="../assets/luna-amb2.svg" alt="Velas y ambiente cálido" /></figure>
+          <figure class="gallery-item"><img src="../assets/luna-amb3.svg" alt="Espacio natural" /></figure>
+          <figure class="gallery-item"><img src="../assets/luna-hero.svg" alt="Zona de descanso" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="beneficios">
+      <div class="container reveal">
+        <h2>Beneficios</h2>
+        <div class="benefits-grid">
+          <article class="card">Reduce el estrés</article>
+          <article class="card">Mejora tu energía</article>
+          <article class="card">Equilibrio mental</article>
+          <article class="card">Relajación profunda</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="paquetes">
+      <div class="container reveal">
+        <h2>Paquetes</h2>
+        <div class="packages">
+          <article class="card package-card">
+            <h3>Ritual relajante</h3>
+            <span class="time">60 min</span>
+            <p>Masaje + aromaterapia para liberar tensión y reconectar contigo.</p>
+            <a class="btn btn-soft" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar</a>
+          </article>
+          <article class="card package-card">
+            <h3>Experiencia premium</h3>
+            <span class="time">90 min</span>
+            <p>Facial avanzado + terapia corporal para restaurar energía y piel.</p>
+            <a class="btn btn-soft" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar</a>
+          </article>
+          <article class="card package-card">
+            <h3>Día completo spa</h3>
+            <span class="time">120 min</span>
+            <p>Programa integral de bienestar para una renovación total.</p>
+            <a class="btn btn-soft" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="testimonios">
+      <div class="container reveal">
+        <h2>Testimonios</h2>
+        <div class="testimonials">
+          <article class="card testimonial"><p>“Salí sintiéndome renovada. El ambiente es impecable y súper profesional.”</p><strong>— Daniela M.</strong></article>
+          <article class="card testimonial"><p>“El mejor spa que he visitado. Cuidan cada detalle y se nota en la experiencia.”</p><strong>— Fernanda R.</strong></article>
+          <article class="card testimonial"><p>“Excelente atención y terapias de gran calidad. Totalmente recomendado.”</p><strong>— Karla P.</strong></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container reveal">
+        <h2>Tu momento de relajación comienza aquí</h2>
+        <p>Reserva hoy y transforma tu rutina en bienestar real.</p>
+        <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">Reservar ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita%20en%20Luna%20Spa">WA</a>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 14);
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

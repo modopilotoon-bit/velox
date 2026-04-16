@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Norte Clinic | Demo Profesional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#f5f8ff;--surface:#fff;--text:#1d2d4f;--muted:#5f7092;--border:#d5e0f8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+    .top{position:sticky;top:0;z-index:20;background:rgba(245,248,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+    .top .wrap{width:min(1120px,92%);margin:auto;min-height:62px;display:flex;align-items:center;justify-content:space-between}.top a{text-decoration:none;color:#3e78ff;font-weight:700}
+    .container{width:min(1120px,92%);margin:auto}.sec{padding:4.8rem 0}.reveal{opacity:0;transform:translateY(20px);transition:.6s}.reveal.visible{opacity:1;transform:none}
+    .hero{background:linear-gradient(180deg,rgba(255,255,255,.88),rgba(245,248,255,.9)),url('../assets/norte-hero.svg') center/cover;padding:5rem 0 4rem}
+    h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.15}h1{font-size:clamp(2rem,6vw,3.6rem);margin:.4rem 0}.subtitle{color:var(--muted);max-width:62ch}
+    .btn{display:inline-block;padding:.85rem 1.2rem;border-radius:999px;background:linear-gradient(120deg,#3e78ff,#5e99ff);color:#fff;text-decoration:none;font-weight:700;box-shadow:0 12px 24px rgba(62,120,255,.28);transition:.22s}
+    .btn:hover{transform:translateY(-2px)} .grid{display:grid;gap:1rem}.services{grid-template-columns:repeat(4,1fr)}.trust{grid-template-columns:1fr 1fr}
+    .card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.1rem;transition:.24s}.card:hover{transform:translateY(-3px);box-shadow:0 10px 20px rgba(0,0,0,.06)}
+    .tag{color:#3e78ff;text-transform:uppercase;letter-spacing:1.8px;font-size:.78rem;font-weight:700}
+    .wa-float{position:fixed;right:1rem;bottom:1rem;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#25D366;color:#042b17;text-decoration:none;font-weight:800}
+    @media(max-width:980px){.services,.trust{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="top"><div class="wrap"><a href="../index.html">← Volver a Velox Web</a><a target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">WhatsApp</a></div></div>
+  <header class="hero"><div class="container reveal"><p class="tag">Norte Clinic · Demo</p><h1>Atención médica confiable con estándares de excelencia</h1><p class="subtitle">Imagen institucional clara, cercana y profesional para fortalecer la confianza del paciente.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">Contactar por WhatsApp</a></div></header>
+  <section class="sec"><div class="container reveal"><h2>Servicios médicos</h2><div class="grid services"><article class="card"><h3>Medicina general</h3><p>Consultas integrales y diagnóstico temprano.</p></article><article class="card"><h3>Chequeos preventivos</h3><p>Evaluaciones periódicas para monitoreo completo.</p></article><article class="card"><h3>Control metabólico</h3><p>Seguimiento para diabetes, tiroides y metabolismo.</p></article><article class="card"><h3>Atención continua</h3><p>Planes personalizados con historial clínico digital.</p></article></div></div></section>
+  <section class="sec"><div class="container grid trust reveal"><article class="card"><h2>Confianza clínica</h2><p class="subtitle">Equipo médico certificado, protocolos actualizados y atención humana para cada etapa del tratamiento.</p></article><article class="card"><h2>Atención y seguimiento</h2><p class="subtitle">Canales directos para dudas, recordatorios y acompañamiento después de la consulta.</p><a class="btn" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">Solicitar cita</a></article></div></section>
+  <a class="wa-float" target="_blank" rel="noopener" href="https://wa.me/529832135455?text=Hola%2C%20me%20gustar%C3%ADa%20crear%20un%20sitio%20web%20con%20Velox%20Web">WA</a>
+  <script>const obs=new IntersectionObserver((e)=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');obs.unobserve(i.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));</script>
+</body>
+</html>
